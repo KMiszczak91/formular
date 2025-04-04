@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haushaltsbeschreibung</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .checkbox-group,
+    .radio-group {
+      margin-top: 0.5rem;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🏠 Formular: Beschreibung des Haushalts</h2>
+
+  <form>
+    <label for="name">Vor- und Nachname:</label>
+    <input type="text" id="name" name="name">
+
+    <label for="address">Adresse (optional):</label>
+    <input type="text" id="address" name="address">
+
+    <label>Wie viele Personen leben in deinem Haushalt?</label>
+    <div class="radio-group">
+      <input type="radio" name="anzahl" value="1"> 1 Person<br>
+      <input type="radio" name="anzahl" value="2"> 2 Personen<br>
+      <input type="radio" name="anzahl" value="3-4"> 3–4 Personen<br>
+      <input type="radio" name="anzahl" value="mehr-als-4"> Mehr als 4 Personen
+    </div>
+
+    <label>Wer gehört zu deinem Haushalt? (Mehrfachauswahl möglich)</label>
+    <div class="checkbox-group">
+      <input type="checkbox" name="mitglied" value="partner"> Ehepartner / Lebenspartner<br>
+      <input type="checkbox" name="mitglied" value="kinder"> Kinder<br>
+      <input type="checkbox" name="mitglied" value="eltern"> Eltern / Großeltern<br>
+      <input type="checkbox" name="mitglied" value="geschwister"> Geschwister<br>
+      <input type="checkbox" name="mitglied" value="freunde"> Freund*innen / Mitbewohner*innen<br>
+      <input type="checkbox" name="mitglied" value="haustiere"> Haustiere<br>
+      <input type="checkbox" name="mitglied" value="andere"> Andere:
+      <input type="text" name="mitglied-andere">
+    </div>
+
+    <label>Wohnsituation:</label>
+    <select name="wohnsituation">
+      <option value="">Bitte auswählen</option>
+      <option value="mietwohnung">Mietwohnung</option>
+      <option value="eigentumswohnung">Eigentumswohnung</option>
+      <option value="haus_miete">Haus zur Miete</option>
+      <option value="eigenes_haus">Eigenes Haus</option>
+      <option value="sonstiges">Sonstiges</option>
+    </select>
+
+    <label>Wohnort:</label>
+    <div class="radio-group">
+      <input type="radio" name="wohnort" value="stadt"> Stadt<br>
+      <input type="radio" name="wohnort" value="vorort"> Vorort<br>
+      <input type="radio" name="wohnort" value="ländlich"> Ländlich
+    </div>
+
+    <label>Finanzielle Lage deines Haushalts (freiwillig):</label>
+    <div class="radio-group">
+      <input type="radio" name="finanzen" value="sehr-gut"> Sehr gut<br>
+      <input type="radio" name="finanzen" value="ausreichend"> Ausreichend<br>
+      <input type="radio" name="finanzen" value="schwierig"> Schwierig<br>
+      <input type="radio" name="finanzen" value="keine-angabe"> Möchte ich nicht angeben
+    </div>
+
+    <label>Gibt es etwas Besonderes, das deinen Haushalt beschreibt?</label>
+    <textarea name="besonderes" rows="4" placeholder="Optionales Freitextfeld..."></textarea>
+
+    <button type="submit">Absenden</button>
+  </form>
+
+</body>
+</html>
